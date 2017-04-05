@@ -177,10 +177,8 @@ a[href]:active {
 }
 
 #header .blog-title {
-    font-size: 20px;
-    font-size: 2rem;
-    letter-spacing: 6px;
-    letter-spacing: 0.6rem;
+    @include pxrem(font-size, 20);
+    @include pxrem(letter-spacing, 6);
     top: 7px;
 }
 
@@ -190,7 +188,7 @@ a[href]:active {
 
 #header .description {
     @include pxrem(font-size, 10);
-    @include pxrem(letter-sapcing, 2);
+    @include pxrem(letter-spacing, 2);
     top: 35px;
 }
 
@@ -207,17 +205,14 @@ a[href]:active {
 
 #header .nav-menu .inline-nav .nav-item {
     display: inline-block;
-    padding: 0 12px;
-    padding: 0 1.2rem;
-    font-size: 12px;
-    font-size: 1.2rem;
+    @include pxrem(padding, 0 12);
+    @include pxrem(font-size, 12);
     border-left: 1px solid #999;
 }
 
 #header .nav-menu .inline-nav .nav-item .label {
     color: #000;
-    letter-spacing: 1px;
-    letter-spacing: 0.1rem;
+    @include pxrem(letter-spacing, 1);
 }
 
 #header .nav-menu .inline-nav .nav-item .label:hover {
@@ -302,22 +297,17 @@ a[href]:active {
 
 #posts .posts-headline {
     margin: 0 20px;
-    padding-bottom: 14px;
-    padding-bottom: 1.4rem;
-    font-size: 14px;
-    font-size: 1.4rem;
+    @include pxrem(padding-bottom, 14);
+    @include pxrem(font-size, 14);
     font-family: "Roboto";
-    letter-spacing: 1px;
-    letter-spacing: 0.1rem;
+    @include pxrem(letter-spacing, 1);
     position: relative;
 }
 
 #posts .posts-headline:after {
     content: "";
-    width: 7px;
-    width: 0.7rem;
-    height: 1px;
-    height: 0.1rem;
+    @include pxrem(width, 7);
+    @include pxrem(height, 1);
     background: #000;
     position: absolute;;
     bottom: 0;
@@ -436,23 +426,17 @@ a[href]:active {
 }
 
 .post-content .title {
-    margin: 0 12px;
-    margin: 0 1.2rem;
-    padding: 12px 0;
-    padding: 1.2rem 0;
-    font-size: 14px;
-    font-size: 1.4rem;
+    @include pxrem(margin, 0 12);
+    @include pxrem(padding, 12 0);
+    @include pxrem(font-size, 14);
     font-family: "Roboto";
-    letter-spacing: 1px;
-    letter-spacing: 0.1rem;
+    @include pxrem(letter-spacing, 1);
     position: relative
 }
 .post-content .title:after {
     content: "";
-    width: 7px;
-    width: 0.7rem;
-    height: 1px;
-    height: 0.1rem;
+    @include pxrem(width, 7);
+    @include pxrem(height, 1);
     background: #000;
     position: absolute;
     bottom: 0;
@@ -465,63 +449,52 @@ a[href]:active {
 }
 
 .post-content .link-wrapper .link .link-text {
-    padding: 12px;
-    padding: 1.2rem;
+    @include pxrem(padding, 12);
 }
 
 .post-content .link-wrapper .link .link-text .link-host {
-    font-size: 10px;
-    font-size: 1rem;
+    @include pxrem(font-size, 10);
 }
 
 .post-content .link-wrapper .link .link-text .link-title {
-    font-size: 14px;
-    font-size: 1.4rem;
+    @include pxrem(font-size, 14);
 }
 
 .post-content .link-wrapper .link .link-text .link-excerpt {
-    font-size: 12px;
-    font-size: 1.2rem;
+    @include pxrem(font-size, 12);
 }
 
 .post-content .caption ,
 .post-content .body-text,
 .post-content .source {
-    padding: 12px;
-    padding: 1.2rem;
+    @include pxrem(padding, 12);
 }
 
 .post-content .caption p,
 .post-content .body-text p,
 .post-content .source {
-    font-size: 12px;
-    font-size: 1.2rem;
+    @include pxrem(font-size, 12);
     line-height: 1.5;
 }
 
 .post-content .short {
-    padding: 12px;
-    padding: 1.2rem;
+    @include pxrem(padding, 12);
     position: relative;
 }
 
 .post-content .short:after {
     content: "”";
-    font-size: 60px;
-    font-size: 6rem;
+    @include pxrem(font-size, 60);
     line-height: 1;
     color: #fff;
     position: absolute;
     top: 0;
-    right: 10px;
-    right: 1rem;
+    @include pxrem(right, 10);
 }
 
 .post-footer {
-    margin: 0 12px;
-    margin: 0 1.2rem;
-    padding: 12px 0;
-    padding: 1.2rem 0;
+    @include pxrem(margin, 0 12);
+    @include pxrem(padding, 12 0);
     position: relative;
 }
 
@@ -536,11 +509,9 @@ a[href]:active {
 }
 
 .date-note-wrapper {
-    font-size: 10px;
-    font-size: 1rem;
+    @include pxrem(font-size, 10);
     font-family: "Roboto";
-    letter-spacing: 1px;
-    letter-spacing: 0.1rem;
+    @include pxrem(letter-spacing, 1);
     color: #666;
 }
 
@@ -575,16 +546,10 @@ a[href]:active {
     height: 10px;
     padding: 47px 0 0 3px;
     line-height: 1;
-    font-size: 10px;
-    font-size: 1rem;
+    @include pxrem(font-size, 10);
     font-family: "Roboto";
-    letter-spacing: 1px;
-    letter-spacing: 0.1rem;
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+    @include pxrem(letter-spacing, 1);
+    @css3(transform, rotate(-90deg));
     transform-origin: left top;
     position: fixed;
     bottom: 0;
@@ -673,11 +638,7 @@ a[href]:active {
     #copyright {
         display: inline-block;
         padding: 0;
-        -webkit-transform: none;
-        -moz-transform: none;
-        -ms-transform: none;
-        -o-transform: none;
-        transform: none;
+        @css3(transform, none);
         position: static;
     }
 
