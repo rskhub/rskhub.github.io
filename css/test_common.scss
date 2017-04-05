@@ -34,8 +34,7 @@
 @mixin pxrem($prop, $val) {
     $valpx: '';
     $valrem: '';
-    $catval: '';
-    @each $catval in $val {
+    @each $catVal in $val {
         $valpx: $valpx + ' ' + $catVal + 'px';
         $valrem: $valrem + ' ' + ($catVal / 10) + 'rem';
     }
