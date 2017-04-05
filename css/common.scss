@@ -549,7 +549,7 @@ a[href]:active {
     @include pxrem(font-size, 10);
     font-family: "Roboto";
     @include pxrem(letter-spacing, 1);
-    @css3(transform, rotate(-90deg));
+    @css3(transform, 'rotate(-90deg)');
     transform-origin: left top;
     position: fixed;
     bottom: 0;
