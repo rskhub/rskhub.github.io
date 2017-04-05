@@ -549,7 +549,7 @@ a[href]:active {
     @include pxrem(font-size, 10);
     font-family: "Roboto";
     @include pxrem(letter-spacing, 1);
-    @css3(transform, 'rotate(-90deg)');
+    @include css3(transform, rotate(-90deg));
     transform-origin: left top;
     position: fixed;
     bottom: 0;
@@ -638,7 +638,7 @@ a[href]:active {
     #copyright {
         display: inline-block;
         padding: 0;
-        @css3(transform, none);
+        @include css3(transform, none);
         position: static;
     }
 
