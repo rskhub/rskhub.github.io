@@ -223,6 +223,8 @@ a[href]:active {
     padding: 60px;
 }
 
+// ## top visual
+
 .header-image-wrapper {
     background: #000;
     overflow: hidden;
@@ -243,8 +245,16 @@ a[href]:active {
 }
 
 .header-image-wrapper .scroll {
+    display: block;
+    width: 100px;
+    margin-left: 50px;
+    padding-top: 30px;
+    text-align: center;
+    @include pxrem(font-size, 10);
+    font-family: "Roboto";
+    @include pxrem(letter-spacing, 1);
     position: absolute;
-    bottom: 50px;
+    bottom: 20px;
     left: 50%;
 }
 
@@ -290,6 +300,11 @@ a[href]:active {
         opacity: 0;
     }
 }
+
+
+// ------------------------------
+// # コンテンツ
+// ------------------------------
 
 #posts {
     padding: 40px;
@@ -525,6 +540,11 @@ a[href]:active {
 .pop .pop-menu {
     display: none;
 }
+
+
+// ------------------------------
+// # フッタ
+// ------------------------------
 
 #footer-wrap {
 }
