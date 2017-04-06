@@ -247,12 +247,13 @@ a[href]:active {
 .header-image-wrapper .scroll {
     display: block;
     width: 100px;
-    margin-left: 50px;
+    margin-left: -50px;
     padding-top: 30px;
     text-align: center;
     @include pxrem(font-size, 10);
     font-family: "Roboto";
     @include pxrem(letter-spacing, 1);
+    color: #fff;
     position: absolute;
     bottom: 20px;
     left: 50%;
