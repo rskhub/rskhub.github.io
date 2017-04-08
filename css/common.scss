@@ -113,6 +113,30 @@ a[href]:active {
     top: 0;
     left: 0;
     z-index: 999;
+
+    &:after {
+        content: "loading";
+        display: block;
+        text-align: center;
+        @include pxrem(font-size, 10);
+        font-family: "Roboto";
+        @include pxrem(letter-spacing, 1);
+        color: #fff;
+        animation: blurloop 2s infinite;
+    }
+
+}
+
+@keyframes blurloop {
+    0% {
+        @include css3(filter, blur(0));
+    }
+    50% {
+        @include css3(filter, blur(5px));
+    }
+    100% {
+        @include css3(filter, blur(0));
+    }
 }
 
 // ## 包括
@@ -236,60 +260,64 @@ a[href]:active {
     background: #000;
     overflow: hidden;
     position: relative;
-}
 
-.header-image {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-}
+    .header-image {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        overflow: hidden;
+        position: relative;
 
-.header-image img {
-    width: auto;
-    height: 100%;
-}
+        img {
+            width: auto;
+            height: 100%;
+        }
 
-.header-image-wrapper .scroll {
-    display: block;
-    width: 100px;
-    margin-left: -50px;
-    padding-top: 30px;
-    text-align: center;
-    @include pxrem(font-size, 10);
-    font-family: "Roboto";
-    @include pxrem(letter-spacing, 1);
-    color: #fff;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-}
+    }
 
-.header-image-wrapper .scroll:before {
-    content: "";
-    box-sizing: border-box;
-    width: 16px;
-    height: 24px;
-    margin-left: -8px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 30px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-}
+    .scroll {
+        display: block;
+        width: 100px;
+        margin-left: -50px;
+        padding-top: 30px;
+        text-align: center;
+        @include pxrem(font-size, 10);
+        font-family: "Roboto";
+        @include pxrem(letter-spacing, 1);
+        color: #fff;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
 
-.header-image-wrapper .scroll:after {
-    content: "";
-    width: 4px;
-    height: 4px;
-    border-radius: 100%;
-    margin-left: -2px;
-    background: rgba(255, 255, 255, 0.3);
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    animation: updw 2s infinite;
+        &:before {
+            content: "";
+            box-sizing: border-box;
+            width: 16px;
+            height: 24px;
+            margin-left: -8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+        }
+
+        &:after {
+            content: "";
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+            margin-left: -2px;
+            background: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            animation: updw 2s infinite;
+        }
+
+    }
+
 }
 
 @keyframes updw {
@@ -316,131 +344,140 @@ a[href]:active {
 
 #posts {
     padding: 40px;
+
+    .posts-headline {
+        margin: 0 20px;
+        @include pxrem(padding-bottom, 14);
+        @include pxrem(font-size, 14);
+        font-family: "Roboto";
+        @include pxrem(letter-spacing, 1);
+        position: relative;
+
+        &:after {
+            content: "";
+            @include pxrem(width, 7);
+            @include pxrem(height, 1);
+            background: #000;
+            position: absolute;;
+            bottom: 0;
+            left: 0;
+        }
+
+    }
+
+    div article {
+        display: block;
+
+        &.active {
+            width: 100%;
+            margin-bottom: 120px;
+        }
+
+        .post-wrapper {
+            margin: 20px;
+            background: #fff;
+            border-bottom: 1px solid #999;
+        }
+
+    }
+
+    .grid #infscr-loading {
+        height: 0;
+        overflow: hidden;
+
+        article.grid-item {
+            visibility: hidden;
+        }
+
+        article .post-anchor {
+            display: block;
+            line-height: 0;
+            color: #000;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
 }
 
-#posts .posts-headline {
-    margin: 0 20px;
-    @include pxrem(padding-bottom, 14);
-    @include pxrem(font-size, 14);
-    font-family: "Roboto";
-    @include pxrem(letter-spacing, 1);
-    position: relative;
-}
 
-#posts .posts-headline:after {
-    content: "";
-    @include pxrem(width, 7);
-    @include pxrem(height, 1);
-    background: #000;
-    position: absolute;;
-    bottom: 0;
-    left: 0;
-}
 
-#posts .grid {
-}
 
-#posts .grid #infscr-loading {
-    height: 0;
-    overflow: hidden;
-}
+.post-anchor {
+    .bwrap {
+        display: block;
+        line-height: 0;
+        background: #000;
+        position: relative;
+        overflow: hidden;
 
-#posts div article {
-    display: block;
-}
+        .bt {
+            width: 100%;
+            height: 7px;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: translateY(-7px);
+            transition: .2s transform;
+        }
 
-#posts .grid article.grid-item {
-    visibility: hidden;
-}
+        .br {
+            width: 7px;
+            height: 100%;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            transform: translateX(7px);
+            transition: .2s transform;
+        }
 
-#posts div article.active {
-    width: 100%;
-    margin-bottom: 120px;
-}
+        .bb {
+            width: 100%;
+            height: 7px;
+            background: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            transform: translateY(7px);
+            transition: .2s transform;
+        }
 
-#posts div article .post-wrapper {
-    margin: 20px;
-    background: #fff;
-    border-bottom: 1px solid #999;
-}
+        .bl {
+            width: 7px;
+            height: 100%;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: translateX(-7px);
+            transition: .2s transform;
+        }
 
-#posts .grid article .post-anchor {
-    display: block;
-    line-height: 0;
-    color: #000;
-}
+        img {
+            opacity: 0.85;
+            position: relative;
+            z-index: 1;
+        }
 
-#posts .grid article .post-anchor:hover {
-    text-decoration: none;
-}
+    }
 
-.post-anchor .bwrap {
-    display: block;
-    line-height: 0;
-    background: #000;
-    position: relative;
-    overflow: hidden;
-}
+    &:hover .bwrap {
+        .bt, .br, .bb, .bl {
+            transform: translateY(0) translateX(0);
+        }
 
-.post-anchor .bwrap .bt {
-    width: 100%;
-    height: 7px;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    transform: translateY(-7px);
-    transition: .2s transform;
-}
+    }
 
-.post-anchor .bwrap .br {
-    width: 7px;
-    height: 100%;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    transform: translateX(7px);
-    transition: .2s transform;
-}
-
-.post-anchor .bwrap .bb {
-    width: 100%;
-    height: 7px;
-    background: #fff;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    transform: translateY(7px);
-    transition: .2s transform;
-}
-
-.post-anchor .bwrap .bl {
-    width: 7px;
-    height: 100%;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    transform: translateX(-7px);
-    transition: .2s transform;
-}
-
-.post-anchor:hover .bwrap .bt,
-.post-anchor:hover .bwrap .br,
-.post-anchor:hover .bwrap .bb,
-.post-anchor:hover .bwrap .bl {
-    transform: translateY(0) translateX(0);
-}
-
-.post-anchor .bwrap img {
-    opacity: 0.85;
-    position: relative;
-    z-index: 1;
 }
 
 .post .small img {
