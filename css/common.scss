@@ -168,56 +168,63 @@ a[href]:active {
     margin: 0 60px;
     font-family: "Roboto";
     position: relative;
+
+    .blog-title,
+    .description,
+    .nav-menu {
+        position: absolute;
+    }
+
+    .blog-title {
+        @include pxrem(font-size, 20);
+        @include pxrem(letter-spacing, 6);
+        top: 7px;
+    }
+
+    .blog-title a {
+        color: #000;
+    }
+
+    .description {
+        @include pxrem(font-size, 10);
+        @include pxrem(letter-spacing, 2);
+        top: 35px;
+    }
+
+    .nav-menu {
+        right: 0;
+        top: 21px;
+
+        .inline-nav {
+            height: 18px;
+            text-align: right;
+            border-right: 1px solid #999;
+
+            .nav-item {
+                display: inline-block;
+                @include pxrem(padding, 0 12);
+                @include pxrem(font-size, 12);
+                border-left: 1px solid #999;
+
+                .label {
+                    color: #000;
+                    @include pxrem(letter-spacing, 1);
+
+                    &:hover {
+                        background: #ff0;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
 }
 
-#header .blog-title,
-#header .description,
-#header .nav-menu {
-    position: absolute;
-}
 
-#header .blog-title {
-    @include pxrem(font-size, 20);
-    @include pxrem(letter-spacing, 6);
-    top: 7px;
-}
-
-#header .blog-title a {
-    color: #000;
-}
-
-#header .description {
-    @include pxrem(font-size, 10);
-    @include pxrem(letter-spacing, 2);
-    top: 35px;
-}
-
-#header .nav-menu {
-    right: 0;
-    top: 21px;
-}
-
-#header .nav-menu .inline-nav {
-    height: 18px;
-    text-align: right;
-    border-right: 1px solid #999;
-}
-
-#header .nav-menu .inline-nav .nav-item {
-    display: inline-block;
-    @include pxrem(padding, 0 12);
-    @include pxrem(font-size, 12);
-    border-left: 1px solid #999;
-}
-
-#header .nav-menu .inline-nav .nav-item .label {
-    color: #000;
-    @include pxrem(letter-spacing, 1);
-}
-
-#header .nav-menu .inline-nav .nav-item .label:hover {
-    background: #ff0;
-}
 
 #content-wrap {
     padding: 60px;
