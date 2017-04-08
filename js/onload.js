@@ -15,10 +15,10 @@ $(function(){
     
     header_image_update();
 
-        $('#loading').fadeOut(500);
     $('.grid img').imagesLoaded(function(){
         masonry_update($g, $('.grid-item'));
         $('body').css('overflow', '');
+        $('#loading').fadeOut(500);
     });
 
     infinitescroll_update($g)
@@ -40,7 +40,6 @@ $(function(){
         var y = $(this).scrollTop();
         var blur = Math.floor((hih + 30 * y) / hih - 1);
         $('.header-image').css({
-//            'top': parseInt( y / 2 ) + 'px',
             '-webkit-filter': 'blur(' + blur + 'px)',
             'filter': 'blur(' + blur + 'px)'
         });

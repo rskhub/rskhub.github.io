@@ -662,6 +662,10 @@ a[href]:active {
 
 @media only screen and (max-width: 640px){
 
+    #loading {
+        display: none;
+    }
+
     #border-top {
         height: 100px;
     }
