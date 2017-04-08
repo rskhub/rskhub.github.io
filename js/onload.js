@@ -18,7 +18,7 @@ $(function(){
     $('.grid img').imagesLoaded(function(){
         masonry_update($g, $('.grid-item'));
         $('body').css('overflow', '');
-//        $('#loading').fadeOut(500);
+        $('#loading').fadeOut(500);
     });
 
     infinitescroll_update($g)

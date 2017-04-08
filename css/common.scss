@@ -117,12 +117,18 @@ a[href]:active {
     &:after {
         content: "loading";
         display: block;
+        width: 100px;
+        height: 20px;
+        margin: -10px 0 0 -50px;
         text-align: center;
         @include pxrem(font-size, 10);
         font-family: "Roboto";
         @include pxrem(letter-spacing, 1);
         color: #fff;
-        animation: blurloop 2s infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        animation: blurloop 3s infinite;
     }
 
 }
