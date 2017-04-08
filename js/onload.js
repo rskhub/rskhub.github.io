@@ -15,11 +15,10 @@ $(function(){
     
     header_image_update();
 
-    alert($('.grid img')[0] ? "true" : "false");
+        $('#loading').fadeOut(500);
     $('.grid img').imagesLoaded(function(){
         masonry_update($g, $('.grid-item'));
         $('body').css('overflow', '');
-        $('#loading').fadeOut(500);
     });
 
     infinitescroll_update($g)
