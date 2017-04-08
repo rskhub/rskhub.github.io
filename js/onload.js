@@ -15,8 +15,8 @@ $(function(){
     
     header_image_update();
 
+    alert($('.grid img')[0] ? "true" : "false");
     $('.grid img').imagesLoaded(function(){
-        alert('hoge');
         masonry_update($g, $('.grid-item'));
         $('body').css('overflow', '');
         $('#loading').fadeOut(500);
