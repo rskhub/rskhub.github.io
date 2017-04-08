@@ -16,6 +16,7 @@ $(function(){
     header_image_update();
 
     $('.grid img').imagesLoaded(function(){
+        alert('hoge');
         masonry_update($g, $('.grid-item'));
         $('body').css('overflow', '');
         $('#loading').fadeOut(500);
