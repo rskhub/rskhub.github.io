@@ -379,6 +379,10 @@ a[href]:active {
     div article {
         display: block;
 
+        &.grid-item {
+            visibility: hidden;
+        }
+
         &.active {
             width: 100%;
             margin-bottom: 120px;
@@ -388,97 +392,88 @@ a[href]:active {
             margin: 20px;
             background: #fff;
             border-bottom: 1px solid #999;
-        }
 
-    }
+            .post-anchor {
+                display: block;
+                line-height: 0;
+                color: #000;
 
-    &.grid-item {
-        visibility: hidden;
-    }
+                &:hover {
+                    text-decoration: none;
+                }
 
-    .post-anchor {
-        display: block;
-        line-height: 0;
-        color: #000;
+                .bwrap {
+                    display: block;
+                    line-height: 0;
+                    background: #000;
+                    position: relative;
+                    overflow: hidden;
 
-        &:hover {
-            text-decoration: none;
-        }
+                    .bt {
+                        width: 100%;
+                        height: 7px;
+                        background: #fff;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 2;
+                        transform: translateY(-7px);
+                        transition: .2s transform;
+                    }
 
-    }
+                    .br {
+                        width: 7px;
+                        height: 100%;
+                        background: #fff;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 2;
+                        transform: translateX(7px);
+                        transition: .2s transform;
+                    }
 
-}
+                    .bb {
+                        width: 100%;
+                        height: 7px;
+                        background: #fff;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 2;
+                        transform: translateY(7px);
+                        transition: .2s transform;
+                    }
 
+                    .bl {
+                        width: 7px;
+                        height: 100%;
+                        background: #fff;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 2;
+                        transform: translateX(-7px);
+                        transition: .2s transform;
+                    }
 
+                    img {
+                        opacity: 0.85;
+                        position: relative;
+                        z-index: 1;
+                    }
 
+                }
 
-.post-anchor {
-    .bwrap {
-        display: block;
-        line-height: 0;
-        background: #000;
-        position: relative;
-        overflow: hidden;
+                &:hover .bwrap {
+                    .bt, .br, .bb, .bl {
+                        transform: translateY(0) translateX(0);
+                    }
 
-        .bt {
-            width: 100%;
-            height: 7px;
-            background: #fff;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            transform: translateY(-7px);
-            transition: .2s transform;
-        }
+                }
 
-        .br {
-            width: 7px;
-            height: 100%;
-            background: #fff;
-            position: absolute;
-            top: 0;
-            right: 0;
-            z-index: 2;
-            transform: translateX(7px);
-            transition: .2s transform;
-        }
+            }
 
-        .bb {
-            width: 100%;
-            height: 7px;
-            background: #fff;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 2;
-            transform: translateY(7px);
-            transition: .2s transform;
-        }
-
-        .bl {
-            width: 7px;
-            height: 100%;
-            background: #fff;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            transform: translateX(-7px);
-            transition: .2s transform;
-        }
-
-        img {
-            opacity: 0.85;
-            position: relative;
-            z-index: 1;
-        }
-
-    }
-
-    &:hover .bwrap {
-        .bt, .br, .bb, .bl {
-            transform: translateY(0) translateX(0);
         }
 
     }
