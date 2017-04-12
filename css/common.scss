@@ -371,6 +371,11 @@ a[href]:active {
 
     }
 
+    .grid #infscr-loading {
+        height: 0;
+        overflow: hidden;
+    }
+
     div article {
         display: block;
 
@@ -386,12 +391,6 @@ a[href]:active {
         }
 
     }
-
-    .grid #infscr-loading {
-        height: 0;
-        overflow: hidden;
-
-        }
 
     &.grid-item {
         visibility: hidden;
