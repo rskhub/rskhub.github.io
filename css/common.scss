@@ -391,19 +391,19 @@ a[href]:active {
         height: 0;
         overflow: hidden;
 
-        article.grid-item {
-            visibility: hidden;
         }
 
-        article .post-anchor {
-            display: block;
-            line-height: 0;
-            color: #000;
+    &.grid-item {
+        visibility: hidden;
+    }
 
-            &:hover {
-                text-decoration: none;
-            }
+    .post-anchor {
+        display: block;
+        line-height: 0;
+        color: #000;
 
+        &:hover {
+            text-decoration: none;
         }
 
     }
